@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Convert code between programming languages with an AI-assisted workflow.">
+  <title>Code Converter — Translate code with care</title>
+  <link rel="stylesheet" href="/Code%20Converter%20Main.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Code Converter home">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span><strong>Code Converter</strong><small>CODE, REIMAGINED</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="status-dot"></span><span class="status-label">AI workspace</span>
+        <a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR MULTILINGUAL CODING SPACE</div>
+        <h1>One idea. <span>Any language.</span></h1>
+        <p>Translate code while preserving its intent. Choose your target language, review the result, and test before you ship.</p>
+      </section>
+
+      <section class="workspace" aria-label="Code conversion workspace">
+        <div class="toolbar">
+          <div class="language-control">
+            <label for="sourceLanguage">FROM</label>
+            <select id="sourceLanguage">
+              <option>Auto-detect</option><option>Python</option><option>JavaScript</option><option>TypeScript</option>
+              <option>Java</option><option>C++</option><option>C</option><option>C#</option><option>Go</option>
+              <option>Rust</option><option>PHP</option><option>Ruby</option><option>Kotlin</option><option>Swift</option>
+              <option>SQL</option><option>HTML</option><option>CSS</option><option>R</option><option>MATLAB</option>
+            </select>
+          </div>
+          <button id="swapButton" class="icon-button" type="button" title="Swap languages" aria-label="Swap languages">⇄</button>
+          <div class="language-control target-control">
+            <label for="targetLanguage">CONVERT TO</label>
+            <select id="targetLanguage">
+              <option>C++</option><option>Python</option><option>JavaScript</option><option>TypeScript</option>
+              <option>Java</option><option>C</option><option>C#</option><option>Go</option><option>Rust</option>
+              <option>PHP</option><option>Ruby</option><option>Kotlin</option><option>Swift</option><option>SQL</option>
+              <option>HTML</option><option>CSS</option><option>R</option><option>MATLAB</option>
+            </select>
+          </div>
+          <div class="toolbar-spacer"></div>
+          <button id="clearButton" class="text-button" type="button">Clear</button>
+          <button id="convertButton" class="convert-button" type="button"><span class="convert-icon">✦</span> Convert code <span class="shortcut">⌘ ↵</span></button>
+        </div>
+
+        <div class="editors">
+          <section class="editor-panel">
+            <div class="panel-heading">
+              <div class="panel-title"><span class="file-icon source-icon">Py</span><div><strong id="sourcePanelTitle">Source code</strong><small id="sourceMeta">Paste your code below</small></div></div>
+              <span class="panel-tag">INPUT</span>
+            </div>
+            <textarea id="sourceCode" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Source code" placeholder="# Paste your code here
+def greet(name):
+    return f&quot;Hello, {name}!&quot;
+
+print(greet(&quot;World&quot;))"></textarea>
+            <div class="editor-footer"><span id="sourceCount">0 lines · 0 chars</span><button id="exampleButton" class="mini-button" type="button">Load example ↗</button></div>
+          </section>
+
+          <section class="editor-panel output-panel">
+            <div class="panel-heading">
+              <div class="panel-title"><span class="file-icon output-icon">{ }</span><div><strong>Converted code</strong><small id="outputMeta">Your result appears here</small></div></div>
+              <button id="copyButton" class="copy-button" type="button" disabled>▢ Copy</button>
+            </div>
+            <textarea id="outputCode" spellcheck="false" readonly aria-label="Converted code" placeholder="// Your converted code will appear here..."></textarea>
+            <div class="editor-footer"><span id="outputCount">Waiting for conversion</span><span class="output-language" id="outputLanguageLabel">C++</span></div>
+          </section>
+        </div>
+
+        <div class="message-row" id="messageRow" role="status" aria-live="polite">
+          <span class="message-symbol">i</span><span id="messageText">Tip: Conversion is AI-assisted. Always review and test generated code before using it.</span>
+        </div>
+      </section>
+
+      <section class="feature-row">
+        <article class="feature-card"><span class="feature-number">01</span><div><strong>Logic-first translation</strong><p>Ask the model to preserve behavior, edge cases, and intent.</p></div></article>
+        <article class="feature-card"><span class="feature-number">02</span><div><strong>Languages, your choice</strong><p>Switch between popular languages from one workspace.</p></div></article>
+        <article class="feature-card"><span class="feature-number">03</span><div><strong>You stay in control</strong><p>Review, copy, and test every result before shipping.</p></div></article>
+      </section>
+      <footer class="footer"><span>CODE CONVERTER <span class="footer-dot">•</span> BUILT FOR BUILDERS</span><span>AI can make mistakes. Verify before production.</span></footer>
+    </main>
+  </div>
+  <script src="/Code%20Converter%20Main.js" defer></script>
+</body>
+</html>
